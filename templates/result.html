@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Analysis Result</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #eef1f4;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            width: 650px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            text-align: center;
+        }
+
+        .section {
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Analysis Result</h2>
+
+    <div class="section">
+        <h4>Basic Metrics</h4>
+        <p>Functions: {{ analysis.functions }}</p>
+        <p>Loops: {{ analysis.loops }}</p>
+        <p>Variables: {{ analysis.variables }}</p>
+    </div>
+
+    <div class="section">
+        <h4>Complexity</h4>
+        {% if complexity %}
+            {% for func, score in complexity.items() %}
+                <p>{{ func }} : {{ score }}</p>
+            {% endfor %}
+        {% else %}
+            <p>No complexity issues</p>
+        {% endif %}
+    </div>
+
+    <div class="section">
+        <h4>Suggestions</h4>
+        {% if tips %}
+            <ul>
+                {% for tip in tips %}
+                    <li>{{ tip }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No suggestions</p>
+        {% endif %}
+    </div>
+
+    <a href="/">Analyze Another Code</a>
+</div>
+
+</body>
+</html>
