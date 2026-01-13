@@ -6,7 +6,7 @@ A **web-based static code analyzer** built using **Python and Flask** that analy
 
 ## 🚀 Live Demo
 🔗 Deployed on Render (Cloud Platform)  
-👉 https://<your-render-app-name>.onrender.com
+👉 https://python-code-analyzer-1.onrender.com/
 
 ---
 
@@ -33,6 +33,7 @@ A **web-based static code analyzer** built using **Python and Flask** that analy
 ---
 
 ## 📂 Project Structure
+
 python-code-analyzer/
 │
 ├── app.py
